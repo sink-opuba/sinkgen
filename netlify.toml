@@ -1,0 +1,8 @@
+[build]
+  command = "eleventy"
+  publish = "_site"
+  functions ="functions"
+
+[[redirects]]
+  from = "/new"
+  to = ".netlify/functions/new"
