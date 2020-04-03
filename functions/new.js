@@ -14,12 +14,13 @@ module.exports.handler = async event => {
   const data = querystring.parse(event.body);
   const uniquePath = shortid.generate();
   data.path = uniquePath;
+  const page = {
+    data: data
+  };
 
   try {
     const queryResponse = await client.query(
-      q.Create(q.Collection("page"), {
-        data: data
-      })
+      q.Create(q.Collection("page"), page)
     );
     const response = {
       statusCode: 200,
