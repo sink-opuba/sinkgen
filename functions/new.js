@@ -10,7 +10,7 @@ const client = new faunadb.Client({
   secret: process.env.FAUNADB
 });
 
-module.exports.hander = async event => {
+module.exports.handler = async event => {
   const data = querystring.parse(event.body);
   const uniquePath = shortid.generate();
   data.path = uniquePath;
